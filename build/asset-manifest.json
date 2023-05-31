@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e9f1b9dd.css",
+    "main.js": "/static/js/main.0e0e3323.js",
+    "static/js/787.0fe84981.chunk.js": "/static/js/787.0fe84981.chunk.js",
+    "static/media/img.png": "/static/media/img.f0a32c9fcdcdcf899b5b.png",
+    "static/media/MainLandingPageHero.png": "/static/media/MainLandingPageHero.30b380787ef7adb09eb6.png",
+    "static/media/LeftImageAbout.png": "/static/media/LeftImageAbout.84451ce163031d2ad27d.png",
+    "static/media/ServiceLandingPage.jpeg": "/static/media/ServiceLandingPage.b2005010d659d03b7121.jpeg",
+    "static/media/RestaurantLandingPage.jpeg": "/static/media/RestaurantLandingPage.e0dec44b85951b312188.jpeg",
+    "static/media/khaled1.png": "/static/media/khaled1.2cde6dafe74f493734d1.png",
+    "static/media/EventLandingPage.jpeg": "/static/media/EventLandingPage.875a418193e5e3cfbafe.jpeg",
+    "static/media/herosection.png": "/static/media/herosection.b44d155b8dd2c770de59.png",
+    "static/media/aboutheroimage.png": "/static/media/aboutheroimage.367be80ee98fd5d01389.png",
+    "static/media/AboutUsPage.jpeg": "/static/media/AboutUsPage.c9232ae2548e9f49c26b.jpeg",
+    "static/media/lm.png": "/static/media/lm.b818c1ea380210728e21.png",
+    "static/media/RightImageAbout.webp": "/static/media/RightImageAbout.d1ace1491a6b81778c02.webp",
+    "index.html": "/index.html",
+    "main.e9f1b9dd.css.map": "/static/css/main.e9f1b9dd.css.map",
+    "main.0e0e3323.js.map": "/static/js/main.0e0e3323.js.map",
+    "787.0fe84981.chunk.js.map": "/static/js/787.0fe84981.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9f1b9dd.css",
+    "static/js/main.0e0e3323.js"
+  ]
+}

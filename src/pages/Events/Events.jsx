@@ -1,41 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./Events.css";
 import axios from "axios";
-import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
+import {CircularProgress,Box} from "@mui/material";
 
 // import axios from 'axios';
-// import ManageEvents from '../../pages/Events/ManageEvents.jsx';
 import Footer from "../../components/Footer/Footer.jsx";
 const Events = () => {
   const [loading, setLoading] = useState(true);
-  // const [events, setEvents] = useState([]);
 
   const [events, setEvents] = useState([
-    // {
-    //   id: 1,
-    //   title: "WordPress Meetup",
-    //   date: "May 25, 2023",
-    //   location: "Online",
-    //   description:
-    //     "Join us for a virtual WordPress meetup where we will discuss the latest trends and tips for WordPress development.",
-    //   Details: ["John", "Jane", "Mike"],
-    // },
-    // {
-    //   id: 2,
-    //   title: "Freelancer Conference",
-    //   date: "June 10, 2023",
-    //   location: "New York City",
-    //   description:
-    //     "The Freelancer Conference is a gathering of freelancers from around the world to network, learn, and share experiences.",
-    //   Details: ["Sarah", "David", "Emily"],
-    // },
-    // Add more event objects as needed
+
   ]);
 
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-  // Function to handle event selection
   const handleEventClick = (event) => {
     setSelectedEvent(event === selectedEvent ? null : event);
   };
@@ -44,7 +22,6 @@ const Events = () => {
     try {
       setLoading(true);
       let res = await axios.get("https://finalproject-app-api.onrender.com/event");
-      // setEvents(res.data);
       console.log(res.data.message);
       setEvents(res.data.message);
       setLoading(false);
@@ -63,27 +40,7 @@ const Events = () => {
       return <p className="events-list__no-events">No events available.</p>;
     }
 
-    // useEffect(() => {
-    //   const fetchData = async () => {
-    //     try {
-    //       const response = await axios.get('https://finalproject-app-api.onrender.com/event');
-    //       const eventData = response.data;
-    //       setEvents(eventData); // Update the events state with the fetched data
-    //     } catch (error) {
-    //       console.error('Error fetching events:', error);
-    //     }
-    //   };
 
-    //   fetchData();
-    // }, []);
-
-    // const renderEvents = () => {
-    //   if (events.length === 0) {
-    //     return <p className="events-list__no-events">Loading events...</p>;
-    //   }
-
-    //   // Rest of the rendering logic remains the same
-    // };
 
     return events.map((event) => (
       <div
