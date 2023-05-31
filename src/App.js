@@ -36,9 +36,9 @@ function App() {
 
               <Route path='/eventT' element={<TableEventDashboard/>}/>
               <Route path='/jobT' element={<TableFindJobDashboard/>}/>
-              <Route path='/'element={<LoginForm/>}/>
+              <Route path='/home'element={<LoginForm/>}/>
               <Route path="/test5" element={<TableJobs/>} />
-            <Route path="/home" element={<HomePage/>} />
+            <Route path="/" element={<HomePage/>} />
             <Route path="/about" element={<AboutPage/>} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/company" element={<JobPage />} />
