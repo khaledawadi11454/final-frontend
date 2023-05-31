@@ -1,6 +1,5 @@
 
 import './App.css';
-import { Scrollbars } from 'react-custom-scrollbars';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar1 from './components/Navbar1/Navbar1.jsx';
 import DashCon from './pages/DashboardContainer';
@@ -28,7 +27,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Scrollbars style={{ width: '100%', height: '100vh' }}>
           <Navbar1/>
           {/* <Outlet/> */}
           <Routes>
@@ -53,7 +51,6 @@ function App() {
             
           
           </Routes>
-        </Scrollbars>
       </Router>
     </div>
   );
