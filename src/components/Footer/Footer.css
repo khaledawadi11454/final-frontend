@@ -102,6 +102,12 @@ nav ul li a {
 }
 
 /* Media queries */
+@media (max-width: 1024px) {
+  .footer-column {
+    flex-basis: 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-column {
     flex-basis: 100%;
@@ -122,5 +128,33 @@ nav ul li a {
 
   .footer-bottom-right {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 20px;
+  }
+
+  .footer-column {
+    flex-basis: 100%;
+    margin-bottom: 15px;
+  }
+
+  .footer-column h3 {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .footer-column p {
+    font-size: 12px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+
+  .social-icons a i {
+    font-size: 16px;
   }
 }

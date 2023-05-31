@@ -135,7 +135,7 @@ const PersonalInformation = () => {
       </div>
       {isEditing ? (        <button onClick={handleFormSubmit}>Save</button>
       ) : (
-        <div className="button-container">
+        <div className="button-containere">
           <button onClick={handleEditClick}>Edit Profile</button>
         </div>
       )}

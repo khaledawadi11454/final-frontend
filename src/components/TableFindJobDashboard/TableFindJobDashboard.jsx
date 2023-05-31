@@ -128,7 +128,7 @@ function TableFindJobDashboard() {
                   sx={{ height: "40px" }}
                   onClick={() => {
                     axios
-                      .get(`${process.env.REACT_APP_URL}job/${tableMeta.rowData[0]}`)
+                      .get(`${process.env.REACT_APP_URL}/job/${tableMeta.rowData[0]}`)
                       .then((response) => {
                         console.log("res", response);
                         setDataById(response.data.message);
@@ -159,7 +159,7 @@ function TableFindJobDashboard() {
                   }).then((result) => {
                     if (result.isConfirmed) {
                       axios
-                        .delete(`${process.env.REACT_APP_URL}job/delete/${tableMeta.rowData[0]}`)
+                        .delete(`${process.env.REACT_APP_URL}/job/delete/${tableMeta.rowData[0]}`)
                         .then((response) => {
                           console.log(response);
                           getData();
@@ -184,7 +184,7 @@ function TableFindJobDashboard() {
 
   const getData = () => {
     axios
-      .get(`${process.env.REACT_APP_URL}job/`)
+      .get(`${process.env.REACT_APP_URL}/job/`)
       .then((response) => {
         console.log(response);
         setData(response.data.message);
@@ -211,7 +211,7 @@ function TableFindJobDashboard() {
 
   const EditData = () => {
     axios
-      .patch(`${process.env.REACT_APP_URL}job/edit/${Id}`, DataEdit)
+      .patch(`${process.env.REACT_APP_URL}/job/edit/${Id}`, DataEdit)
       .then((res) => {
         console.log(res);
         getData();
@@ -316,7 +316,7 @@ function TableFindJobDashboard() {
                   });
                 } else {
                   axios
-                    .post(`${process.env.REACT_APP_URL}job/`, DataPost)
+                    .post(`${process.env.REACT_APP_URL}/job/`, DataPost)
                     .then((res) => {
                       console.log(res);
                       getData();

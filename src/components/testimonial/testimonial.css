@@ -1,12 +1,4 @@
-/* body {
-	margin: 0;
-	background-image: linear-gradient(90deg, #201A35, #0B0320);
-	color: #fff;
-	font-family: sans-serif;
-	display: flex;
-	align-items: center;
-	min-height: 100vh;
-} */
+
 .whatclientsay{
 	width: 80%;
 	border-bottom: 5px solid;
@@ -31,13 +23,13 @@
 	perspective: 1000px;
 	overflow: hidden;
 	margin-top: 40px;
-	padding: 35px ;
+	/* padding: 35px ; */
 }
 .testimonials .item {
 	width: 450px;
 	padding: 30px;
 	border-radius: 5px;
-	background-color: #0065bc;
+	background-color: #007bff;
 	position: absolute;
 	top: 0;
 	box-sizing: border-box;

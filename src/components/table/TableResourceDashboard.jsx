@@ -7,7 +7,7 @@ import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
-
+import './TableResourceDashboard.css';
 function TableResourceDashboard() {
   const [Data, setData] = useState();
   const [DataById, setDataById] = useState({
@@ -27,7 +27,7 @@ function TableResourceDashboard() {
 
   const show = () => {
     var ele = document.querySelector(".none");
-    ele.classList.toggle("form-add-Resource");
+    ele.classList.toggle("form-add-resource");
   };
 
   const [visibleAdd, isShowAdd] = useState(false);
@@ -119,7 +119,7 @@ function TableResourceDashboard() {
                   onClick={() => {
                     axios
                       .get(
-                        `${process.env.REACT_APP_URL}resource/${tableMeta.rowData[0]}`
+                        `${process.env.REACT_APP_URL}/resource/${tableMeta.rowData[0]}`
                       )
                       .then((response) => {
                         console.log("res", response);
@@ -152,7 +152,7 @@ function TableResourceDashboard() {
                     if (result.isConfirmed) {
                       axios
                         .delete(
-                          `${process.env.REACT_APP_URL}resource/delete/${tableMeta.rowData[0]}`
+                          `${process.env.REACT_APP_URL}/resource/delete/${tableMeta.rowData[0]}`
                         )
                         .then((response) => {
                           console.log(response);
@@ -176,7 +176,7 @@ function TableResourceDashboard() {
   console.log(Id);
   const getData = () => {
     axios
-      .get(`${process.env.REACT_APP_URL}resource`, DataById)
+      .get(`${process.env.REACT_APP_URL}/resource`, DataById)
       .then((response) => {
         console.log(response);
         setData(response.data.message);
@@ -201,7 +201,7 @@ function TableResourceDashboard() {
 
   const EditData = () => {
     axios
-      .patch(`${process.env.REACT_APP_URL}resource/edit/${Id}`, DataById)
+      .patch(`${process.env.REACT_APP_URL}/resource/edit/${Id}`, DataById)
       .then((res) => {
         console.log(res);
         getData();
@@ -229,7 +229,7 @@ function TableResourceDashboard() {
   };
 
   return (
-    <div className="Resourcess">
+    <div className="resourcess">
       <div className="none">
         {/* for add expense */}
         {visibleAdd && (
@@ -297,7 +297,7 @@ function TableResourceDashboard() {
                 } else {
                   axios
                     .post(
-                      `${process.env.REACT_APP_URL}resource/`,
+                      `${process.env.REACT_APP_URL}/resource/`,
                       DataPost
                     )
                     .then((res) => {

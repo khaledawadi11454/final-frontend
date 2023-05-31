@@ -121,17 +121,17 @@ const JobPage = () => {
       </div>
       <div className="slide profile-content">
         <h1>CVS Caremark</h1>
-        <p>
+        <p className='pcompanyresponsive'>
           At the heart of your story is the profound and wide-reaching impact that's possible when you choose to reinvent
           your career with the company that's reinventing pharmacy.
         </p>
-        <p>
+        <p className='pcompanyresponsive'>
           It begins when you feel the inspiring weight of our promise. When you find yourself part of a team unified in
           purpose and goal. When our values resonate in the work you do, the connections you make and the communities you
           enrich.
         </p>
         <h2>Who We Are</h2>
-        <p>
+        <p className='pcompanyresponsive'>
           Innovative ideas. Strategic solutions. Compassionate care. Better outcomes. That's CVS Caremark. We welcome
           passion, reward greatness and embody our values in all we do. From the unparalleled service we provide our
           customers, to the opportunities and steadfast support we provide our colleagues, we're dedicated to helping
@@ -162,11 +162,11 @@ const JobPage = () => {
       <div className="slide callout-content">
         <div className="callout">
           <h2>At the Heart of Your Story</h2>
-          <p>
+          <p className='pcompanyresponsive'>
             is the profound and wide-reaching impact that's possible when you choose to reinvent your career with the
             company that's reinventing pharmacy.
           </p>
-          <p>
+          <p className='pcompanyresponsive'>
             It begins when you feel the inspiring weight of our promise. When you find yourself part of a team unified in
             purpose and goal. When our values resonate in the work you do, the connections you make and the communities
             you enrich.
@@ -199,7 +199,7 @@ const JobPage = () => {
         <h1>Part Time - Financial Accountant (20-24 hrs per week) Job</h1>
         <div className="job-body">
           <h2>Job Description</h2>
-          <p>
+          <p className='pcompanyresponsive'>
             We look for the same qualities in every employee, because they add up to something special for our customers.
             Since 1964, we've been developing natural solutions to improve lives in a world where{" "}
             <a className="joba" href="#">
@@ -211,11 +211,11 @@ const JobPage = () => {
             </a>{" "}
             with respect.
           </p>
-          <p>
+          <p className='pcompanyresponsive'>
             We're passionate about real food and genuine customer service. And it all starts with great people.
           </p>
           <h2>Responsibilities</h2>
-          <ul>
+          <ul className='pcompanyresponsive'>
             <li>Ensure integrity of the financial statements for the legal entities assigned.</li>
             <li>Assist with the monthly accounting close process including the preparation of journal entries and account reconciliations.</li>
             <li>Prepare financial statements and supporting schedules according to monthly close schedule.</li>

@@ -17,11 +17,7 @@ const teamData = [
     title: 'Team 3',
     post: 'Dipl. Physiotherapeut',
   },
-  // {
-  //   imgSrc: 'https://i.ibb.co/8x9xK4H/team.jpg',
-  //   title: 'Team 4',
-  //   post: 'Dipl. Physiotherapeut',
-  // },
+  
 ];
 
 const OurTeam = () => {

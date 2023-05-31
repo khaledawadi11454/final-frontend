@@ -39,10 +39,10 @@ const HeroSection = () => {
 
   return (
     <div className="hero-section">
-      <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
+      <img  className="imgherosession" src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       <div className="carousel-content">
-        <h1>Find and Hire Quality WordPress Professionals</h1>
-        <p>Discover talented WordPress professionals and get your projects done efficiently.</p>
+        <h1 className='h1herosession'>Find and Hire Quality WordPress Professionals</h1>
+        <p className='pherosession'>Discover talented WordPress professionals and get your projects done efficiently.</p>
         <button className="sign-up-button">Sign Up</button>
       </div>
       <div className="carousel-navigation">

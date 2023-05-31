@@ -23,11 +23,13 @@ import Header from '../src/components/SideBar/Sidebar.jsx';
 // import Dashboard from '../src/pages/Dashboard/dashbord.jsx';
 // import AnimatedBackground from '../src/pages/ProfilePage/animeted.jsx';
 import LoginForm from './components/login/login.jsx';
+import { useState } from 'react';
 function App() {
+  const [isAdmin, setIsAdmin] = useState(true)
   return (
     <div className="App">
       <Router>
-          <Navbar1/>
+          <Navbar1 isAdmin={isAdmin}/>
           {/* <Outlet/> */}
           <Routes>
               <Route path='/dashboard/' element={<DashCon/>}>
@@ -48,6 +50,7 @@ function App() {
             <Route path='/profile' element={<Profile/>}/>
             <Route path='/findjob' element={<JobList/>}/>
             <Route path='/dashboard' element={<Header/>}/>
+            <Route path='/login' element={<LoginForm />} />
             
           
           </Routes>

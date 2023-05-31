@@ -1,39 +1,47 @@
-import { useRef, useState ,useEffect} from "react";
-import { FaBars, FaTimes, FaUser, FaBell } from 'react-icons/fa';
+import { useRef, useState, useEffect } from "react";
+import { FaBars, FaTimes, FaUser, FaBell } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import './Navbar1.css';
-import LOGO from '../../images/demo/LOGO.png';
-const Navbar1 = () => {
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./Navbar1.css";
+import LOGO from "../../images/demo/LOGO.png";
+const Navbar1 = ({ isAdmin }) => {
   const navRef = useRef();
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
-  }
+  };
 
   const toggleProfileMenu = () => {
     setShowProfileMenu(!showProfileMenu);
-  }
+  };
 
   const handleLogout = () => {
     // Add your logout logic here
     // For example, redirect to the login page or clear user session
-  }
-useEffect(() => {
-AOS.init()
-}, [])
+  };
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <header>
-      <h3><img className="LOGO" src={LOGO} alt="" srcset="" data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000"/></h3>
-      
+      <h3>
+        <img
+          className="LOGO"
+          src={LOGO}
+          alt=""
+          srcset=""
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+        />
+      </h3>
+
       <nav ref={navRef}>
-      <Link to="/dashboard">Dashboard</Link>
+        {isAdmin && <Link to="/dashboard">Dashboard</Link>}
         <Link to="/">Home</Link>
-        
+
         <Link to="/blog">Blog</Link>
         <Link to="/about">About</Link>
         <Link to="/company">Company Profile</Link>
@@ -55,11 +63,11 @@ AOS.init()
             </div>
           )}
         </div>
-        <button className="nav-btn notification-icon">
+        {/* <button className="nav-btn notification-icon">
           <FaBell />
-        </button>
+        </button> */}
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-          <FaTimes  className="svg"/>
+          <FaTimes className="svg" />
         </button>
       </nav>
       <button className="nav-btn" onClick={showNavbar}>

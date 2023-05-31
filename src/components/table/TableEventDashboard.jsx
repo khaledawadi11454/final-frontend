@@ -5,7 +5,7 @@ import { TextField, Button } from "@mui/material";
 import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
-
+import './TableEventDashboard.css';
 function TableEventDashboard() {
   const [Data, setData] = useState([]);
   const [DataById, setDataById] = useState({
@@ -26,8 +26,8 @@ function TableEventDashboard() {
   const [Id, setId] = useState();
 
   const show = () => {
-    var ele = document.querySelector(".nonee");
-    ele.classList.toggle("form-add-Event");
+    var ele = document.querySelector(".none");
+    ele.classList.toggle("form-add-event");
   };
 
   const [visibleAdd, isShowAdd] = useState(true);
@@ -114,7 +114,7 @@ function TableEventDashboard() {
                   sx={{ height: "40px" }}
                   onClick={() => {
                     axios
-                      .get(`${process.env.REACT_APP_URL}event/${tableMeta.rowData[0]}`)
+                      .get(`${process.env.REACT_APP_URL}/event/${tableMeta.rowData[0]}`)
                       .then((response) => {
                         setDataById(response.data.message);
                         setId(tableMeta.rowData[0]);
@@ -145,7 +145,7 @@ function TableEventDashboard() {
                     if (result.isConfirmed) {
                       axios
                         .delete(
-                          `${process.env.REACT_APP_URL}event/delete/${tableMeta.rowData[0]}`
+                          `${process.env.REACT_APP_URL}/event/delete/${tableMeta.rowData[0]}`
                         )
                         .then((response) => {
                           console.log(response);
@@ -169,7 +169,7 @@ function TableEventDashboard() {
 
   const getData = () => {
     axios
-      .get(`${process.env.REACT_APP_URL}event`)
+      .get(`${process.env.REACT_APP_URL}/event`)
       .then((response) => {
         setData(response.data.message);
       })
@@ -192,7 +192,7 @@ function TableEventDashboard() {
 
   const EditData = () => {
     axios
-      .patch(`${process.env.REACT_APP_URL}event/edit/${Id}`, DataEdit)
+      .patch(`${process.env.REACT_APP_URL}/event/edit/${Id}`, DataEdit)
       .then((res) => {
         console.log(res);
         getData();
@@ -211,8 +211,8 @@ function TableEventDashboard() {
   };
 
   return (
-    <div className="Eventss">
-      <div className="nonee">
+    <div className="eventss">
+      <div className="none">
         {/* for add event */}
         {visibleAdd && (
           <form>
@@ -282,7 +282,7 @@ function TableEventDashboard() {
                   });
                 } else {
                   axios
-                    .post(`${process.env.REACT_APP_URL}event/`, DataPost)
+                    .post(`${process.env.REACT_APP_URL}/event/`, DataPost)
                     .then((res) => {
                       console.log(res);
                       getData();
@@ -360,7 +360,7 @@ function TableEventDashboard() {
           </form>
         )}
       </div>
-      <div className="Events_table">
+      <div className="events_table">
         <h3 className="pagetitle">Event</h3>
         <div className="table_mui">
           <MUIDataTable

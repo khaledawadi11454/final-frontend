@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   content: "";
-  /* background: url("../../images/demo/1.jpeg"); */
+ 
   background-size: 100% 100px;
   width: 100%;
   height: 100px;
@@ -166,8 +166,34 @@
   background: #f7f5ec;
 }
 
-@media only screen and (max-width: 990px) {
-  .our-team {
-    margin-bottom: 30px;
+/* Media queries */
+@media only screen and (max-width: 1200px) {
+  .col-lg-3 {
+    flex-basis: 40%;
+    max-width: 40%;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .col-lg-3 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .our-team {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .col-lg-3 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .containerTeam{
+    margin-left: -155px;
+  }
+}
+
+
