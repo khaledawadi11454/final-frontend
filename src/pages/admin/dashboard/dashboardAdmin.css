@@ -1,0 +1,8 @@
+
+.charts-dash{
+   display: flex; 
+   flex-wrap: wrap;
+   justify-content: space-around;
+   width: 97%;
+   margin:3.5pc auto;
+}

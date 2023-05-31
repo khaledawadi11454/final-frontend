@@ -1,0 +1,51 @@
+.table-container {
+  margin-top: 20px;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+}
+
+.search-input > * {
+  margin-right: 4px;
+}
+
+.search-input > .MuiInputBase-root {
+  width: 200px;
+}
+
+.MuiButton-containedPrimary {
+  background-color: #1976d2;
+  color: white;
+}
+
+.MuiButton-containedSecondary {
+  background-color: #f44336;
+  color: white;
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: #1565c0;
+}
+
+.MuiButton-containedSecondary:hover {
+  background-color: #d32f2f;
+}
+
+.MuiTableCell-head {
+  background-color: #000;
+  color: #fff;
+}
+
+.MuiTableCell-body {
+  font-size: 14px;
+}
+
+.MuiTableSortLabel-root {
+  color: #fff !important;
+  font-weight: bold;}
+  .MuiTableSortLabel-active {
+    color: #fff !important;
+  }
+

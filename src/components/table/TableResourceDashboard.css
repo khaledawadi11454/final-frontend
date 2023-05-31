@@ -1,0 +1,94 @@
+/* 
+  .Resourcess {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .none {
+    display: none;
+  }
+  
+  .form-add-Resource {
+    display: block;
+  }
+  
+  .head-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .Resourcess form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+  
+  .Resources_table {
+    width: 100%;
+  }
+  
+  .table_mui {
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .pagetitle {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .Resourcess .MuiButton-root {
+    
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-transform: none;
+    font-weight: bold;
+  }
+  
+ 
+  .Resourcess label {
+    font-weight: bold;
+  }
+  
+  .Resourcess .MuiTextField-root {
+    width: 100%;
+  }
+  
+  .Resourcess .MuiTableCell-root {
+    padding: 16px;
+  }
+  
+  .Resourcess .MuiTableHead-root {
+    background-color: #f5f5f5;
+  }
+  
+  .Resourcess .MuiTableSortLabel-root.MuiTableSortLabel-active {
+    color: #447695;
+  }
+
+  
+  .Resourcess .MuiTableSortLabel-icon {
+    color: #999999 !important;
+  }
+  
+  .Resourcess .MuiTablePagination-actions .MuiIconButton-root {
+    padding: 8px;
+  }
+  
+  .Resourcess .MuiTablePagination-input {
+    font-size: 12px;
+  }
+  
+  .Resourcess .MuiTablePagination-caption {
+    font-size: 12px;
+    color: #999999;
+  }
+   */

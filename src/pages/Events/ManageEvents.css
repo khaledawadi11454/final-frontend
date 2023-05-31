@@ -1,0 +1,67 @@
+.manage-events {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .manage-events h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .manage-events h3 {
+    margin-top: 20px;
+  }
+  
+  .manage-events input[type="text"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .manage-events button {
+    display: block;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .manage-events ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .manage-events li {
+    margin-bottom: 20px;
+  }
+  
+  .manage-events li h4 {
+    margin: 0;
+  }
+  
+  .manage-events p {
+    margin: 0;
+  }
+  
+  .manage-events button {
+    padding: 6px 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .manage-events button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .manage-events p.no-events {
+    text-align: center;
+  }
+  

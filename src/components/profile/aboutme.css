@@ -1,0 +1,59 @@
+.about-me {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Updated alignment to left */
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+   
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  .about-me.editing {
+    transform: rotateY(0deg);
+  }
+  
+  .about-me h2 {
+    margin-bottom: 20px;
+  }
+  
+  .about-me p,
+  .about-me textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* resize: none; */
+  }
+  .button-container {
+    position: absolute;
+    top: 19px;
+    right: 1%;
+    display: flex;
+    align-items: center;
+  }
+  .about-me button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .about-me button:hover {
+    background-color: #0069d9;
+  }
+  
+  .about-me button:focus {
+    outline: none;
+  }
+  

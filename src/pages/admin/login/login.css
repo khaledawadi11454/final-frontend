@@ -1,0 +1,14 @@
+.loginAdmin {
+  display: flex;
+  width: 100%;
+  
+}
+.loginAdmin-left {
+  width: 50%;
+  padding: 6pc;
+
+}
+.loginAdmin-right {
+    margin-top: 10pc;
+  width: 50%;
+}

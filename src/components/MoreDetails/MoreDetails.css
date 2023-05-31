@@ -1,0 +1,41 @@
+.more-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .detail-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+    gap: 400px;
+  }
+  
+  .detail-card.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .detail-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .detail-text {
+    margin-left: 20px;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
