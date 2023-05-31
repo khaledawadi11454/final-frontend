@@ -71,9 +71,9 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar1 from './components/Navbar1/Navbar1.jsx';
 import DashCon from './pages/DashboardContainer';
-import TableEventDashboard from '../../final-project/src/components/table/TableEventDashboard.jsx';
-import TableJobs from '../../final-project/src/components/table/TableResourceDashboard.jsx';
-import TableFindJobDashboard from '../../final-project/src/components/TableFindJobDashboard/TableFindJobDashboard.jsx';
+import TableEventDashboard from './components/table/TableEventDashboard.jsx';
+import TableJobs from './components/table/TableResourceDashboard.jsx';
+import TableFindJobDashboard from './components/TableFindJobDashboard/TableFindJobDashboard.jsx';
 
 import Profiledash from '../src/components/dashbordcomponant/profiledash.jsx';
 import HomePage from '../src/pages/homePage/home.jsx';
@@ -90,7 +90,7 @@ import JobList from "../src/pages/Test/Test.jsx";
 import Header from '../src/components/SideBar/Sidebar.jsx';
 // import Dashboard from '../src/pages/Dashboard/dashbord.jsx';
 // import AnimatedBackground from '../src/pages/ProfilePage/animeted.jsx';
-import LoginForm from '../../final-project/src/components/login/login.jsx';
+import LoginForm from './components/login/login.jsx';
 function App() {
   return (
     <div className="App">
