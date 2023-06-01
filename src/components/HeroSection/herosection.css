@@ -1,5 +1,6 @@
 .hero-section {
   position: relative;
+  
 }
 
 .carousel-navigation {
@@ -120,8 +121,13 @@
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    position: relative;
+    background: linear-gradient(45deg,black,#000000cf);
+    padding-bottom: 50px;
+  }
   .carousel-content {
-    font-size: 8px;
+    width: 250px;
   }
   .imgherosession {
     height: 25vh;

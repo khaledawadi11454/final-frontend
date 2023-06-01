@@ -4,7 +4,7 @@
     padding: 2rem;
     background-color: whitesmoke;
     width: 80%;
-    box-shadow: rgb(0 0 0 / 15%) 0px 15px 25px, rgb(0 0 0 / 5%) 0px 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
   .bgblog{
     width: 100%;
@@ -26,13 +26,14 @@
   
   .blog-page__search {
     margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
   
   .blog-page__search-input {
     padding: 1rem;
     font-size: 1.2rem;
     width: 100%;
-    border: 2px solid #2c54f8;
+    border: 2px solid #007bff;
     border-radius: 4px;
     transition: border-color 0.3s ease-in-out;
   }
@@ -49,9 +50,10 @@
   }
   
   .blog-page__post {
-    background-color: #008eff;
+    /* background-color: #007bff; */
+    background:linear-gradient(0deg,black, #0057ac);
     border-radius: 4px;
-    box-shadow: rgb(0 0 0 / 15%) 0px 15px 25px, rgb(0 0 0 / 5%) 0px 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     padding: 1.5rem;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
@@ -65,7 +67,7 @@
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: rgb(0, 0, 0);
+    color: white;
     font-family: serif;
   }
   
@@ -73,7 +75,7 @@
     font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 1rem;
-    color: rgb(84,83,83);
+    color: rgb(250, 242, 0);
     font-style: italic;
     font-family: serif;
   }
@@ -93,7 +95,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: rgb(0, 0, 0);
+    color: white;
   font-family: serif;
   }
   
@@ -101,7 +103,7 @@
     font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 0.5rem;
-    color:rgb(84,83,83);
+    color: rgb(250, 242, 0);
     font-family: serif;
   }
   
@@ -130,4 +132,13 @@
     animation: slideInUp 0.5s ease-in-out 0.25s;
   }
 
-    
+  @media (max-width: 480px) {
+    .blog-page__search-input {
+      padding: 1rem;
+      font-size: 1rem;
+      width: 88%;
+      border: 2px solid #007bff;
+      border-radius: 4px;
+      transition: border-color 0.3s ease-in-out;
+    }
+  }

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import "./Resources.css";
+import { CircularProgress, Box } from "@mui/material";
 
 const Resources = () => {
   const [resources, setResources] = useState([
@@ -25,12 +26,13 @@ const Resources = () => {
   ]);
 
   const [selectedCategory, setSelectedCategory] = useState("All");
-
+  const [loading, setLoading] = useState(true);
   const getData = async () => {
     try {
       let res = await axios.get("https://finalproject-app-api.onrender.com/resource");
       // console.log(res.data);
-      setResources(res.data.message)
+      setResources(res.data.message);
+      setLoading(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -135,11 +137,17 @@ const Resources = () => {
             </button>
             {/* Add more category buttons as needed */}
           </div>
-          <ul className="resources-list">{renderResources()}</ul>
-        </div>
-      </section>
-    </>
-  );
-};
+          {loading ? (
+            <Box sx={{ width: "100%", height: "60vh", display: "grid", placeItems: "center" }}>
+              <CircularProgress />
+            </Box>
+             ) : (
+              <ul className="resources-list">{renderResources()}</ul>
+              )}
+            </div>
+          </section>
+        </>
+      );
+    };
 
 export default Resources;

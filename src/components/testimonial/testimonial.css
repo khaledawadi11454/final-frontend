@@ -29,7 +29,7 @@
 	width: 450px;
 	padding: 30px;
 	border-radius: 5px;
-	background-color: #007bff;
+	/* background-color: #007bff; */
 	position: absolute;
 	top: 0;
 	box-sizing: border-box;
@@ -38,6 +38,7 @@
 	box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 	user-select: none;
 	cursor: pointer;
+	background:linear-gradient(0deg,black, #0057ac);
 	
 }
 .testimonials .item img {
@@ -53,6 +54,8 @@
 }
 .testimonials .item h2 {
 	font-size: 14px;
+	padding: 20px;
+	color: white;
 }
 .dots {
 	display: flex;
@@ -76,7 +79,7 @@
 #t-4:checked ~ .dots label[for="t-4"],
 #t-5:checked ~ .dots label[for="t-5"] {
 	transform: scale(2);
-	background-color: rgb(31, 7, 248);
+	background-color: #0057ac;
 	width: 10px;
 	height: 10px;
 }
@@ -153,11 +156,11 @@
 /* Add this media query at the end of your CSS */
 @media (max-width: 768px) {
 	.whatclientsay {
-	  width: 80%;
-	  /* text-align-last: left; */
+	  width: 64%;
 	  padding: 10px;
 	  border-bottom: 5px solid black;
     border-radius: 10px;
+	font-size: 25px;
 	}
   
 	.testimonials .item {
@@ -177,5 +180,22 @@
 	  width: 4px;
 	  margin: 5px;
 	}
+  }
+  @media (max-width: 480px) {
+	#t-1:checked ~ .testimonials label[for="t-1"],
+#t-2:checked ~ .testimonials label[for="t-2"],
+#t-3:checked ~ .testimonials label[for="t-3"],
+#t-4:checked ~ .testimonials label[for="t-4"],
+#t-5:checked ~ .testimonials label[for="t-4"],
+#t-5:checked ~ .testimonials label[for="t-5"] {
+	z-index: 4;
+	width: 80%;
+}
+.dots {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -50px;
+}
   }
   

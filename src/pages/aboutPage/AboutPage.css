@@ -5,7 +5,7 @@
    width:100%;
    height:500px;
    opacity:.8;
-   background-color:rgb(30, 173, 255);
+   background-color:#007bff;
    background-image:url('../../images/demo/aboutheroimage.png');
    background-size:cover;
    background-position:bottom;
@@ -126,7 +126,7 @@
 }
 .card .circle-container{
    position:relative;
-   background-color:#579f79;
+   background-color:#007bff;
    width:250px;
    height:250px;
    border:none;
@@ -196,4 +196,14 @@
    .nav {
       height: 80px;
    }
+}
+@media (max-width: 480px) {
+   .header{
+      height: 300px;
+      opacity: 1;
+   }
+   .container h1 {
+   font-size: 40px;
+   }
+
 }

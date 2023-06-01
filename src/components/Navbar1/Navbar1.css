@@ -81,6 +81,7 @@ nav {
     gap: 1.5rem;
     background-color: var(--mainColor);
     transition: 1s;
+    justify-content: center;
   }
 
   header .responsive_nav {
@@ -95,7 +96,7 @@ nav {
   }
 
   nav a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -149,7 +150,7 @@ nav {
   color: var(--secondaryColor);
 }
 
-/* Media Queries */
+
 
 @media only screen and (max-width: 576px) {
   .LOGO {

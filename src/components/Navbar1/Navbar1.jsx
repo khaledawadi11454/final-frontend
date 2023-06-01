@@ -7,10 +7,13 @@ import "./Navbar1.css";
 import LOGO from "../../images/demo/LOGO.png";
 const Navbar1 = ({ isAdmin }) => {
   const navRef = useRef();
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
+    toggleNav();
   };
 
   const toggleProfileMenu = () => {
@@ -18,9 +21,12 @@ const Navbar1 = ({ isAdmin }) => {
   };
 
   const handleLogout = () => {
-    // Add your logout logic here
-    // For example, redirect to the login page or clear user session
+   
   };
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+  
   useEffect(() => {
     AOS.init();
   }, []);
@@ -38,34 +44,33 @@ const Navbar1 = ({ isAdmin }) => {
         />
       </h3>
 
-      <nav ref={navRef}>
-        {isAdmin && <Link to="/dashboard">Dashboard</Link>}
-        <Link to="/">Home</Link>
+      <nav ref={navRef} className={isNavOpen ? 'responsive_nav' : ''}>
 
-        <Link to="/blog">Blog</Link>
-        <Link to="/about">About</Link>
-        <Link to="/company">Company Profile</Link>
-        <Link to="/resources">Resources</Link>
-        <Link to="/events">Events</Link>
-        <Link to="/findjob">Find Job</Link>
-        <Link to="/test5">tables</Link>
-        <Link to="/eventT">EventT</Link>
-        <Link to="/jobT">JobT</Link>
+        {isAdmin && <Link to="/dashboard" onClick={toggleNav}>Dashboard</Link>}
+        <Link to="/" onClick={toggleNav}>Home</Link>
+
+        <Link to="/blog" onClick={toggleNav}>Blog</Link>
+        <Link to="/about" onClick={toggleNav}>About</Link>
+        <Link to="/company" onClick={toggleNav}>Company Profile</Link>
+        <Link to="/resources" onClick={toggleNav}>Resources</Link>
+        <Link to="/events" onClick={toggleNav}>Events</Link>
+        <Link to="/findjob" onClick={toggleNav}>Find Job</Link>
+        <Link to="/test5" onClick={toggleNav}>tables</Link>
+        <Link to="/eventT" onClick={toggleNav}>EventT</Link>
+        <Link to="/jobT" onClick={toggleNav}>JobT</Link>
         <div className="profile-menu">
           <button className="nav-btn profile-icon" onClick={toggleProfileMenu}>
             <FaUser />
           </button>
           {showProfileMenu && (
             <div className="profile-dropdown">
-              {/* Add your profile menu options here */}
-              <Link to="/profile">Profile</Link>
+            
+              <Link to="/profile" onClick={toggleNav}>Profile</Link>
               <button onClick={handleLogout}>Logout</button>
             </div>
           )}
         </div>
-        {/* <button className="nav-btn notification-icon">
-          <FaBell />
-        </button> */}
+        
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes className="svg" />
         </button>
@@ -78,3 +83,4 @@ const Navbar1 = ({ isAdmin }) => {
 };
 
 export default Navbar1;
+

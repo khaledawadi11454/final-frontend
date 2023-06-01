@@ -16,7 +16,7 @@ import BlogPage from '../src/pages/BlogPage/Blog.jsx';
 import JobPage from '../src/pages/CompanyProfile/CompanyProfile.jsx';
 
 import Resources from '../src/pages/Resources/Resources.jsx';
-import Events from '../src/pages/Events/Events.jsx';
+import Events from './pages/Events/Events.jsx';
 import Profile from '../src/pages/ProfilePage/Profile.jsx';
 import JobList from "../src/pages/Test/Test.jsx";
 import Header from '../src/components/SideBar/Sidebar.jsx';

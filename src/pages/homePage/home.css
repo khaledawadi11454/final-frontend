@@ -62,13 +62,25 @@
 
 @media (max-width: 480px) {
   .feature h2 {
-    font-size: 1.5rem;
+    font-size: 24px;
+    margin: inherit;
+  }
+  .feature  p {
+    margin: inherit;
+  }
+  .features{
+    font-size: 30px;
+    width: 40%;
+  }
+  .PRoject{
+    width: 40%;
+    font-size: 24px;
   }
 }
 
 /* Testimonial Section Styles */
 
-.testimonial-section {
+/* .testimonial-section {
   text-align: center;
   margin-bottom: 40px;
 }
@@ -96,4 +108,4 @@
 
 .testimonial-card p:last-child {
   font-weight: bold;
-}
+} */
