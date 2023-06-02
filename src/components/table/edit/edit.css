@@ -1,0 +1,14 @@
+.edit-section {
+  width: 30%;
+}
+.edit-section form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.edit-section form * {
+    width: 100%;
+}

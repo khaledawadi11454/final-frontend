@@ -1,4 +1,4 @@
-/* 
+/* /* 
   .Resourcess {
     display: flex;
     flex-direction: column;
@@ -91,7 +91,6 @@
     font-size: 12px;
     color: #999999;
   }
-   */
 
    .pagetitle{
     font-size: 40px;
@@ -159,4 +158,23 @@
     background-color: transparent;
     color: var(--darkBlue);
     font-size: 30px;
+} */
+
+.actions-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions-section svg {
+  height: 20px;
+  width: 20px;
+}
+
+.tables-and-forms {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
 }
