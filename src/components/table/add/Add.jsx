@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Add = (props) => {
   const [data, setData] = useState({});
+  const [disabled, setDisabled] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,6 +15,7 @@ const Add = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setDisabled(true);
     try {
       let res = await axios.post(
         `${process.env.REACT_APP_URL}/resource/`,
@@ -28,12 +30,14 @@ const Add = (props) => {
         });
         props.getData();
       }
+      setDisabled(false);
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Error",
         text: "Failed to add resource",
       });
+      setDisabled(false);
       console.log(error);
     }
   };
@@ -71,7 +75,7 @@ const Add = (props) => {
             />
             <span>stars</span>
           </div>
-          <button>Add Resource</button>
+          <button disabled={disabled}>Add Resource</button>
         </form>
       </div>
     </>

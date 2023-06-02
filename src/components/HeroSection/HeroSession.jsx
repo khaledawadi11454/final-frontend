@@ -6,8 +6,10 @@ import MainLandingPAgeHero from '../../images/demo/MainLandingPageHero.png';
 import lm from '../../images/demo/lm.png';
 
 import './herosection.css';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const nav = useNavigate()
   const images = [
     img,
     MainLandingPAgeHero,
@@ -37,13 +39,17 @@ const HeroSection = () => {
     );
   };
 
+  const navigate = () => {
+    nav('/login')
+  }
+
   return (
     <div className="hero-section">
       <img  className="imgherosession" src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       <div className="carousel-content">
         <h1 className='h1herosession'>Find and Hire Quality WordPress Professionals</h1>
         <p className='pherosession'>Discover talented WordPress professionals and get your projects done efficiently.</p>
-        <button className="sign-up-button">Sign Up</button>
+        <button className="sign-up-button" onClick={navigate}>Sign Up</button>
       </div>
       <div className="carousel-navigation">
         <button onClick={goToPreviousImage}>

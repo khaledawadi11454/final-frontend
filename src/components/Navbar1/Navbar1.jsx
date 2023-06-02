@@ -6,6 +6,11 @@ import "aos/dist/aos.css";
 import "./Navbar1.css";
 import LOGO from "../../images/demo/LOGO.png";
 const Navbar1 = ({ isAdmin }) => {
+
+  const logout = () => {
+    localStorage.clear()
+    window.location.pathname = '/'
+  }
   const navRef = useRef();
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -55,7 +60,7 @@ const Navbar1 = ({ isAdmin }) => {
         <Link to="/resources" onClick={toggleNav}>Resources</Link>
         <Link to="/events" onClick={toggleNav}>Events</Link>
         <Link to="/findjob" onClick={toggleNav}>Find Job</Link>
-        <Link to="/test5" onClick={toggleNav}>tables</Link>
+        {/* <Link to="/test5" onClick={toggleNav}>tables</Link> */}
         <Link to="/eventT" onClick={toggleNav}>EventT</Link>
         <Link to="/jobT" onClick={toggleNav}>JobT</Link>
         <div className="profile-menu">
@@ -66,7 +71,7 @@ const Navbar1 = ({ isAdmin }) => {
             <div className="profile-dropdown">
             
               <Link to="/profile" onClick={toggleNav}>Profile</Link>
-              <button onClick={handleLogout}>Logout</button>
+              <button onClick={logout}>Logout</button>
             </div>
           )}
         </div>

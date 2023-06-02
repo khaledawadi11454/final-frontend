@@ -1,44 +1,53 @@
 import React, { useState } from "react";
 import "./login.css";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [data, setData] = useState({});
+  const nav = useNavigate();
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    setData({ ...data, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const resp = await axios.post("https://finalproject-app-api.onrender.com/user/login", {
-      email: email,
-      password: password,
-    });
-    console.log("loginnnn", resp);
-    // Perform login logic here with email and password
-    console.log("Login submitted");
-    // Reset form fields
-    setEmail("");
-    setPassword("");
+    try {
+      const resp = await axios.post(
+        "https://finalproject-app-api.onrender.com/user/login",
+        // "http://localhost:5000/user/login",
+        data
+      );
+      if (resp.status === 200 || resp.status > 200) {
+        if (resp.data.message.role === "admin") {
+          localStorage.setItem("token", JSON.stringify(resp.data.message));
+          nav('/test5')
+          window.location.reload()
+        } else {
+          localStorage.setItem("user", JSON.stringify(resp.data.message));
+          nav('/')
+          window.location.reload()
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div className="form-container">
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form">
         <h2>Login</h2>
         <div className="form-group">
           <label>Email:</label>
           <input
             className="form-input"
             type="email"
-            value={email}
-            onChange={handleEmailChange}
+            onChange={handleChange}
             required
+            name="email"
           />
         </div>
         <div className="form-group">
@@ -46,12 +55,12 @@ const LoginForm = () => {
           <input
             className="form-input"
             type="password"
-            value={password}
-            onChange={handlePasswordChange}
+            onChange={handleChange}
+            name="password"
             required
           />
         </div>
-        <button className="form-button" type="submit">
+        <button className="form-button" type="submit" onClick={handleSubmit}>
           Login
         </button>
       </form>
@@ -60,43 +69,23 @@ const LoginForm = () => {
 };
 
 const SignupForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleRoleChange = (e) => {
-    setRole(e.target.value);
+  const [data, setData] = useState({});
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const resp = await axios.post("https://finalproject-app-api.onrender.com/user/register", {
-      name: name,
-      email: email,
-      password: password,
-      role: role,
-    });
+    const resp = await axios.post(
+      // "Access-Control-Allow-Origin",
+      "https://finalproject-app-api.onrender.com/user/register",
+      // "http://localhost:5000/user/register",
+      data
+    );
     console.log(resp);
-    // Perform sign-up logic here with name, email, password, and role
     console.log("Signup submitted");
-    // Reset form fields
-    setName("");
-    setEmail("");
-    setPassword("");
-    setRole("");
+    Swal.fire("Success", "You Have Registered Successfully", "success");
   };
 
   return (
@@ -108,8 +97,8 @@ const SignupForm = () => {
           <input
             className="form-input"
             type="text"
-            value={name}
-            onChange={handleNameChange}
+            onChange={handleChange}
+            name="name"
             required
           />
         </div>
@@ -117,9 +106,9 @@ const SignupForm = () => {
           <label>Email:</label>
           <input
             className="form-input"
+            name="email"
             type="email"
-            value={email}
-            onChange={handleEmailChange}
+            onChange={handleChange}
             required
           />
         </div>
@@ -127,9 +116,9 @@ const SignupForm = () => {
           <label>Password:</label>
           <input
             className="form-input"
+            name="password"
             type="password"
-            value={password}
-            onChange={handlePasswordChange}
+            onChange={handleChange}
             required
           />
         </div>
@@ -137,13 +126,14 @@ const SignupForm = () => {
           <label>Role:</label>
           <select
             className="form-input"
-            value={role}
-            onChange={handleRoleChange}
+            onChange={handleChange}
             required
+            name="role"
           >
             <option value="">Select a role</option>
-            <option value="wordpress developer">WordPress Developer</option>
+            <option value="WordPress Developer">WordPress Developer</option>
             <option value="customer">Customer</option>
+            <option value="freelancer">Freelancer</option>
           </select>
         </div>
         <button className="form-button" type="submit">
@@ -154,7 +144,7 @@ const SignupForm = () => {
   );
 };
 
-const App = () => {
+const Login = () => {
   const [activeTab, setActiveTab] = useState("login");
 
   const handleTabChange = (tab) => {
@@ -163,23 +153,25 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <div className="tabs-container">
-        <button
-          className={`tab-button ${activeTab === "login" ? "active" : ""}`}
-          onClick={() => handleTabChange("login")}
-        >
-          Login
-        </button>
-        <button
-          className={`tab-button ${activeTab === "signup" ? "active" : ""}`}
-          onClick={() => handleTabChange("signup")}
-        >
-          Sign Up
-        </button>
+      <div className="login-form-container">
+        <div className="tabs-container">
+          <button
+            className={`tab-button ${activeTab === "login" ? "active" : ""}`}
+            onClick={() => handleTabChange("login")}
+          >
+            Login
+          </button>
+          <button
+            className={`tab-button ${activeTab === "signup" ? "active" : ""}`}
+            onClick={() => handleTabChange("signup")}
+          >
+            Sign Up
+          </button>
+        </div>
+        {activeTab === "login" ? <LoginForm /> : <SignupForm />}
       </div>
-      {activeTab === "login" ? <LoginForm /> : <SignupForm />}
     </div>
   );
 };
 
-export default App;
+export default Login;
