@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaGooglePlus, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,17 +9,17 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-column">
             <h3>About</h3>
-            <p>Add a brief description or mission statement about your WordPress community here.</p>
+            <p>W-PRO is the ultimate solution for businesses and WordPress professionals, offering a seamless platform to connect, hire, and showcase talent in a supportive community.</p>
           </div>
           <div className="footer-column">
             <h3>Contact</h3>
-            <p>Include your contact information, such as email address, phone number, or social media links.</p>
+            <p>Get in touch with us for any inquiries or assistance,such as email address, phone number, or social media links.</p>
             <div className="footer-bottom-right">
             <ul className="social-icons">
-              <li><a href="#"><FaFacebookF /></a></li>
-              <li><a href="#"><FaTwitter /></a></li>
-              <li><a href="#"><FaInstagram /></a></li>
-              <li><a href="#"><FaLinkedinIn /></a></li>
+              {/* <li><a href="#"><FaFacebookF /></a></li> */}
+              <li><a href="awadkhaled.webdev@gmail.com"><FaGooglePlus /></a></li>
+              <li><a href="https://www.instagram.com/khaledawadi11454/"><FaInstagram /></a></li>
+              <li><a href="https://www.linkedin.com/in/khaledawadi11454/"><FaLinkedinIn /></a></li>
             </ul>
           </div>
           </div>

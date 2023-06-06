@@ -3,7 +3,7 @@
 :root {
   --mainColor: #1F1E1F;
   --mainColorLight: #5767aa;
-  --secondaryColor: #db2b39;
+  --secondaryColor: rgb(250, 242, 0);
   --textColor: #eee;
 }
 
@@ -112,6 +112,9 @@ nav {
   border: none;
   outline: none;
   color: var(--textColor);
+}
+.profile-icon :hover{
+  color: var(--secondaryColor);
 }
 
 .profile-dropdown {

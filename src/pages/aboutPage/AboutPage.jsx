@@ -21,18 +21,10 @@ function AboutPage() {
             <h1 >About us</h1>
             <hr />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+            At W-PRO, we are passionate about connecting businesses and individuals with top-quality WordPress professionals. Our platform serves as a hub for both clients and professionals, providing a seamless experience for hiring and showcasing talent. With our user-friendly profiles, demo features, ratings and reviews, search function, and communication tools, we make it easy to find the perfect WordPress professional for any project.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+            We understand the challenges that both businesses and WordPress professionals face. Businesses often struggle to find reliable and skilled WordPress professionals, while professionals find it challenging to showcase their talents and attract clients. That's why we built W-PRO – to bridge the gap and create a supportive community for both parties.
             </p>
           </div>
           <div className="right">
@@ -49,18 +41,13 @@ function AboutPage() {
             <h1>Mission Statement</h1>
             <hr />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+            Our mission is to empower businesses and individuals to succeed in their WordPress projects by connecting them with the right professionals and providing a platform that fosters growth and collaboration. We aim to be the go-to resource for all WordPress-related needs, offering unique features and resources that set us apart from the competition.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+            We are committed to facilitating successful transactions, ensuring customer satisfaction, and promoting the growth of WordPress professionals. By providing a reliable and user-friendly platform, we strive to make the process of finding, hiring, and working with WordPress professionals a seamless and enjoyable experience.
+            </p>
+            <p>
+            Join W-PRO today and become part of a vibrant community where businesses and professionals thrive together.
             </p>
           </div>
           <div className="clear"></div>

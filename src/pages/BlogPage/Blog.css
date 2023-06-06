@@ -16,6 +16,7 @@
   }
   
   .blog-page__title {
+    margin-top: 20px;
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 2rem;

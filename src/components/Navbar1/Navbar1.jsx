@@ -5,18 +5,18 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Navbar1.css";
 import LOGO from "../../images/demo/LOGO.png";
+import { BiLogOut } from "react-icons/bi";
+import { useSignOut } from "react-auth-kit";
 const Navbar1 = ({ isAdmin }) => {
 
-  const logout = () => {
-    localStorage.clear()
-    window.location.pathname = '/'
-  }
+
   const navRef = useRef();
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const [showProfileMenu, setShowProfileMenu] = useState(false);
-
+const signOut = useSignOut();
   const showNavbar = () => {
+  
     navRef.current.classList.toggle("responsive_nav");
     toggleNav();
   };
@@ -25,9 +25,7 @@ const Navbar1 = ({ isAdmin }) => {
     setShowProfileMenu(!showProfileMenu);
   };
 
-  const handleLogout = () => {
-   
-  };
+
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
@@ -42,7 +40,7 @@ const Navbar1 = ({ isAdmin }) => {
           className="LOGO"
           src={LOGO}
           alt=""
-          srcset=""
+          srcSet=""
           data-aos="flip-left"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="2000"
@@ -51,18 +49,18 @@ const Navbar1 = ({ isAdmin }) => {
 
       <nav ref={navRef} className={isNavOpen ? 'responsive_nav' : ''}>
 
-        {isAdmin && <Link to="/dashboard" onClick={toggleNav}>Dashboard</Link>}
+        {/* {isAdmin && <Link to="/dashboard" onClick={toggleNav}>Dashboard</Link>} */}
         <Link to="/" onClick={toggleNav}>Home</Link>
 
         <Link to="/blog" onClick={toggleNav}>Blog</Link>
         <Link to="/about" onClick={toggleNav}>About</Link>
-        <Link to="/company" onClick={toggleNav}>Company Profile</Link>
+        {/* <Link to="/company" onClick={toggleNav}>Company Profile</Link> */}
         <Link to="/resources" onClick={toggleNav}>Resources</Link>
         <Link to="/events" onClick={toggleNav}>Events</Link>
         <Link to="/findjob" onClick={toggleNav}>Find Job</Link>
         {/* <Link to="/test5" onClick={toggleNav}>tables</Link> */}
-        <Link to="/eventT" onClick={toggleNav}>EventT</Link>
-        <Link to="/jobT" onClick={toggleNav}>JobT</Link>
+        {/* <Link to="/eventT" onClick={toggleNav}>EventT</Link>
+        <Link to="/jobT" onClick={toggleNav}>JobT</Link> */}
         <div className="profile-menu">
           <button className="nav-btn profile-icon" onClick={toggleProfileMenu}>
             <FaUser />
@@ -71,7 +69,7 @@ const Navbar1 = ({ isAdmin }) => {
             <div className="profile-dropdown">
             
               <Link to="/profile" onClick={toggleNav}>Profile</Link>
-              <button onClick={logout}>Logout</button>
+              <button onClick={e=>signOut()}>Logout</button>
             </div>
           )}
         </div>

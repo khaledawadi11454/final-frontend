@@ -1,5 +1,5 @@
 import React from 'react';
-
+import khaled1 from '../../images/demo/khaled1.png';
 import './testimonial.css';
 
 function Testimonial() {
@@ -14,29 +14,29 @@ function Testimonial() {
       <input type="radio" name="testimonial" id="t-5" />
       <div className="testimonials">
         <label className="item" htmlFor="t-1">
-          <img src="https://dummyimage.com/150" alt="picture" />
+          <img src={khaled1} alt="picture" />
           <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-          <h2>- Princy, Web Developer</h2>
+          <h2>- khaled Awad, Web Developer</h2>
         </label>
         <label className="item" htmlFor="t-2">
-          <img src="https://dummyimage.com/150" alt="picture" />
+          <img src={khaled1} alt="picture" />
           <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-          <h2>- Princy, Web Developer</h2>
+          <h2>- khaled Awad, Web Developer</h2>
         </label>
         <label className="item" htmlFor="t-3">
-          <img src="https://dummyimage.com/150" alt="picture" />
+          <img src={khaled1} alt="picture" />
           <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-          <h2>- Princy, Web Developer</h2>
+          <h2>- khaled Awad, Web Developer</h2>
         </label>
         <label className="item" htmlFor="t-4">
-          <img src="https://dummyimage.com/150" alt="picture" />
+          <img src={khaled1} alt="picture" />
           <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-          <h2>- Princy, Web Developer</h2>
+          <h2>- khaled Awad, Web Developer</h2>
         </label>
         <label className="item" htmlFor="t-5">
-          <img src="https://dummyimage.com/150" alt="picture" />
+          <img src={khaled1} alt="picture" />
           <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-          <h2>- Princy, Web Developer</h2>
+          <h2>- khaled Awad, Web Developer</h2>
         </label>
       </div>
       <div className="dots">

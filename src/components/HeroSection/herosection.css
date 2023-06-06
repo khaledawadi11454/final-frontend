@@ -126,6 +126,12 @@
     background: linear-gradient(45deg,black,#000000cf);
     padding-bottom: 50px;
   }
+  .carousel-navigation{
+    top: 30%;
+    left: -50px;
+    right: -50px;
+
+  }
   .carousel-content {
     width: 250px;
   }

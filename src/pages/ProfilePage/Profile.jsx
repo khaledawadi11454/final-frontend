@@ -8,7 +8,7 @@ import PortfolioItems from '../../components/protfolio.jsx';
 const Profile = () =>{
     return(
          <>
-    <div className="profile">
+    <div >
         <PersonalInformation/>
         <AboutMe/>
         <PortfolioItems/>

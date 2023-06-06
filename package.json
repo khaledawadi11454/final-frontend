@@ -24,6 +24,7 @@
     "normalize.css": "^8.0.1",
     "or": "^0.2.0",
     "react": "^18.2.0",
+    "react-auth-kit": "^2.12.2",
     "react-dom": "^18.2.0",
     "react-elastic-carousel": "^0.11.5",
     "react-icons": "^4.9.0",

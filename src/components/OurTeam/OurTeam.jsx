@@ -1,21 +1,22 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaGooglePlus, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaGooglePlus, FaLinkedin } from 'react-icons/fa';
+import khaled1 from '../../images/demo/khaled1.png';
 import './OurTeam.css';
 const teamData = [
   {
-    imgSrc: 'https://i.ibb.co/8x9xK4H/team.jpg',
-    title: 'Team 1',
-    post: 'Inhaber & Geschäftsführer',
+    imgSrc: khaled1,
+    title: 'Khaled Awad',
+    post: 'Frontend Developer',
   },
   {
-    imgSrc: 'https://i.ibb.co/8x9xK4H/team.jpg',
-    title: 'Team 2',
-    post: 'Stellvertretender Geschäftsführer',
+    imgSrc: khaled1,
+    title: 'Khaled Awad',
+    post: 'FullStack developer',
   },
   {
-    imgSrc: 'https://i.ibb.co/8x9xK4H/team.jpg',
-    title: 'Team 3',
-    post: 'Dipl. Physiotherapeut',
+    imgSrc: khaled1,
+    title: 'Khaled Awad',
+    post: 'Web developer',
   },
   
 ];
@@ -53,8 +54,8 @@ const TeamMember = ({ member }) => {
         </div>
         <ul className="social">
           <li>
-            <a href="#" target="_blank">
-              <FaFacebook />
+            <a href="https://www.instagram.com/khaledawadi11454/" target="_blank">
+              <FaInstagram />
             </a>
           </li>
           <li>
@@ -63,12 +64,12 @@ const TeamMember = ({ member }) => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="awadkhaled.webdev@gmail.com">
               <FaGooglePlus />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/khaledawadi11454/">
               <FaLinkedin />
             </a>
           </li>

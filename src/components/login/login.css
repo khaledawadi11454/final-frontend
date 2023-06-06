@@ -1,10 +1,9 @@
+/* Default styles */
+
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 150px; */
-  width: 100%;
-  /* margin: auto */
   min-height: 89.5vh;
   background-image: url("../../images/pattern.svg");
   background-position: center;
@@ -94,6 +93,7 @@
   gap: 0.6rem;
   width: 80%;
 }
+
 .form-group input {
   width: 100%;
 }
@@ -124,4 +124,36 @@
 
 .form-button:hover {
   background-color: #333;
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  /* Adjust login form container width for smaller screens */
+  .login-form-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust login form container width and font size for smaller screens */
+  .login-form-container {
+    width: 80%;
+  }
+  
+  .tab-button {
+    font-size: 14px;
+  }
+  
+  .form-container form button {
+    width: 70%;
+  }
+  
+  .form-group {
+    width: 80%;
+  }
+  
+  .form-group select {
+    width: 100%;
+  }
 }

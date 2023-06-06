@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Events.css";
 import axios from "axios";
-import {CircularProgress,Box} from "@mui/material";
+import {Box} from "@mui/material";
 import Footer from "../../components/Footer/Footer.jsx";
-
+import Loader from '../../components/Loader/Loader';
 
 
 
@@ -79,8 +79,8 @@ const Events = () => {
     <>
       {loading ? (
         <Box sx={{width: "100%", height: "60vh", display: "grid", placeItems: "center"}}>
-         
-          <CircularProgress />
+         <Loader/>
+          
         </Box>
       ) : (
         <>
@@ -95,6 +95,7 @@ const Events = () => {
           <Footer />
         </>
       )}
+     
     </>
   );
 };

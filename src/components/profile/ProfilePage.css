@@ -1,0 +1,99 @@
+/* ProfilePage.css */
+
+.profile-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .profile-form-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-form-field {
+    margin-bottom: 15px;
+  }
+  
+  .profile-form-label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .profile-form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .profile-form-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .profile-form-button.edit-button {
+    background-color: #007bff;
+  }
+  
+  .profile-form-button.submit-button {
+    background-color: #28a745;
+  }
+  
+  .fade-enter {
+    opacity: 0;
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+  
+  /* Responsive Styles */
+  
+  @media only screen and (max-width: 600px) {
+    .profile-form-container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    
+    .profile-form-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .profile-form-label {
+      font-size: 14px;
+    }
+    
+    .profile-form-input {
+      padding: 6px;
+      font-size: 14px;
+    }
+    
+    .profile-form-button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+  

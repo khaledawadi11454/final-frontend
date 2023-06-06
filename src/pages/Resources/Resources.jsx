@@ -2,35 +2,19 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import "./Resources.css";
-import { CircularProgress, Box } from "@mui/material";
-
+import { Box } from "@mui/material";
+import Footer from '../../components/Footer/Footer';
+import Loader from '../../components/Loader/Loader';
 const Resources = () => {
-  const [resources, setResources] = useState([
-    {
-      id: 1,
-      title: "WordPress.org",
-      category: "Official Website",
-      link: "https://wordpress.org/",
-      rating: 4.5,
-      // reviews: 10,
-    },
-    {
-      id: 2,
-      title: "WordPress.com",
-      category: "Website Hosting",
-      link: "https://wordpress.com/",
-      rating: 4.2,
-      // reviews: 8,
-    },
-    // Add more resource objects as needed
-  ]);
-
+  const [resources, setResources] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [resourcesPerPage] = useState(5);
+
   const getData = async () => {
     try {
       let res = await axios.get("https://finalproject-app-api.onrender.com/resource");
-      // console.log(res.data);
       setResources(res.data.message);
       setLoading(false);
     } catch (error) {
@@ -45,6 +29,7 @@ const Resources = () => {
   // Function to handle category filter
   const handleCategoryFilter = (category) => {
     setSelectedCategory(category);
+    setCurrentPage(1); // Reset current page when changing category filter
   };
 
   // Function to handle resource rating
@@ -58,11 +43,16 @@ const Resources = () => {
     setResources(updatedResources);
   };
 
+  // Get current resources
+  const indexOfLastResource = currentPage * resourcesPerPage;
+  const indexOfFirstResource = indexOfLastResource - resourcesPerPage;
+  const currentResources = resources.slice(indexOfFirstResource, indexOfLastResource);
+
   // Function to render the list of resources
   const renderResources = () => {
-    let filteredResources = resources;
+    let filteredResources = currentResources;
     if (selectedCategory !== "All") {
-      filteredResources = resources.filter(
+      filteredResources = currentResources.filter(
         (resource) => resource.category === selectedCategory
       );
     }
@@ -86,19 +76,27 @@ const Resources = () => {
               {[...Array(5)].map((_, index) => (
                 <FaStar
                   key={index}
-                  className={`star ${
-                    index < resource.rating ? "selected" : ""
-                  }`}
+                  className={`star ${index < resource.rating ? "selected" : ""}`}
                   onClick={() => handleRating(resource.id, index + 1)}
                 />
               ))}
             </div>
-            {/* <p className="reviews">({resource.reviews} reviews)</p> */}
           </div>
         </div>
       </li>
     ));
   };
+
+  // Function to handle pagination
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  // Generate page numbers
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(resources.length / resourcesPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <>
@@ -107,47 +105,53 @@ const Resources = () => {
         <div className="container">
           <h2 className="resources-title">Resources</h2>
           <p className="resources-description">
-            Here are some helpful resources for the WordPress community and
-            freelancers:
+            Here are some helpful resources for the WordPress community and freelancers:
           </p>
           <div className="category-filter">
             <button
-              className={`filter-button ${
-                selectedCategory === "All" ? "active" : ""
-              }`}
+              className={`filter-button ${selectedCategory === "All" ? "active" : ""}`}
               onClick={() => handleCategoryFilter("All")}
             >
               All
             </button>
             <button
-              className={`filter-button ${
-                selectedCategory === "Official Website" ? "active" : ""
-              }`}
+              className={`filter-button ${selectedCategory === "Official Website" ? "active" : ""}`}
               onClick={() => handleCategoryFilter("Official Website")}
             >
               Official Website
             </button>
             <button
-              className={`filter-button ${
-                selectedCategory === "Website Hosting" ? "active" : ""
-              }`}
+              className={`filter-button ${selectedCategory === "Website Hosting" ? "active" : ""}`}
               onClick={() => handleCategoryFilter("Website Hosting")}
             >
               Website Hosting
             </button>
-            {/* Add more category buttons as needed */}
           </div>
           {loading ? (
             <Box sx={{ width: "100%", height: "60vh", display: "grid", placeItems: "center" }}>
-              <CircularProgress />
+              <Loader/>
             </Box>
-             ) : (
+          ) : (
+            <>
               <ul className="resources-list">{renderResources()}</ul>
-              )}
-            </div>
-          </section>
-        </>
-      );
-    };
+              <div className="pagination">
+                {pageNumbers.map((number) => (
+                  <button
+                    key={number}
+                    className={`page-number ${currentPage === number ? "active" : ""}`}
+                    onClick={() => paginate(number)}
+                  >
+                    {number}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+      <Footer/>
+    </>
+  );
+};
 
 export default Resources;

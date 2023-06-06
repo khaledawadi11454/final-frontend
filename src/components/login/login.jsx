@@ -3,7 +3,9 @@ import "./login.css";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { useSignIn } from "react-auth-kit";
 const LoginForm = () => {
+  const signIn = useSignIn()
   const [data, setData] = useState({});
   const nav = useNavigate();
 
@@ -19,18 +21,16 @@ const LoginForm = () => {
         "https://finalproject-app-api.onrender.com/user/login",
         // "http://localhost:5000/user/login",
         data
-      );
-      if (resp.status === 200 || resp.status > 200) {
-        if (resp.data.message.role === "admin") {
-          localStorage.setItem("token", JSON.stringify(resp.data.message));
-          nav('/test5')
-          window.location.reload()
-        } else {
-          localStorage.setItem("user", JSON.stringify(resp.data.message));
+      )
+      console.log(resp)
+          signIn({
+            token:resp.data.token,
+            expiresIn:3000,
+            authState:resp.data.data,
+            tokenType: "Bearer"
+          })
           nav('/')
-          window.location.reload()
-        }
-      }
+          
     } catch (error) {
       console.log(error);
     }

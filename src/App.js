@@ -1,11 +1,11 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar1 from "./components/Navbar1/Navbar1.jsx";
-import DashCon from "./pages/DashboardContainer";
+// import DashCon from "./pages/DashboardContainer";
 import TableEventDashboard from "./components/table/TableEventDashboard.jsx";
 import TableFindJobDashboard from "./components/TableFindJobDashboard/TableFindJobDashboard.jsx";
-
-import Profiledash from "./components/dashbordcomponant/profiledash.jsx";
+import { AuthProvider } from "react-auth-kit";
+// import Profiledash from "./components/dashbordcomponant/profiledash.jsx";
 import HomePage from "./pages/homePage/home.jsx";
 import AboutPage from "./pages/aboutPage/AboutPage.jsx";
 
@@ -24,49 +24,58 @@ import LoginForm from "./components/login/login.jsx";
 import { useEffect, useState } from "react";
 import DashboardTabs from "./pages/dashboardTabs/DashboardTabs";
 function App() {
-  const [isAdmin, setIsAdmin] = useState(true);
-
-  const checkLogin = () => {
-    if (localStorage.getItem("token")) {
-      setIsAdmin(true);
-    } else {
-      setIsAdmin(false);
-    }
-  };
 
 
-  useEffect(() => {
-    checkLogin();
-  }, [isAdmin]);
-
+console.log(window.location.hostname)
   return (
     <div className="App">
-      <Router>
-        <Navbar1 isAdmin={isAdmin} />
-        {/* <Outlet/> */}
-        <Routes>
-          <Route path="/dashboard/" element={<DashCon />}>
+        <Router>
+      <AuthProvider
+        authType={"localstorage"}
+        authName={"_auth"}
+        cookieDomain={window.location.hostname}
+        cookieSecure={false}
+      >
+          <Navbar1/>
+          {/* <Outlet/> */}
+          <Routes>
+            {/* <Route path="/dashboard/" element={<DashCon />}>
             <Route path="profile" element={<Profiledash />} />
-          </Route>
+          </Route> */}
 
-          <Route path="/eventT" element={<TableEventDashboard />} />
-          <Route path="/jobT" element={<TableFindJobDashboard />} />
-          <Route path="/home" element={<LoginForm />} />
-          {isAdmin && <Route path="/test5" element={<DashboardTabs />} />}
-          <Route path="*" element={<p style={{width: '100%', minHeight: '89.5vh', display: 'grid', placeItems: 'center'}}>404 NOT FOUND</p>} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/company" element={<JobPage />} />
+            <Route path="/eventT" element={<TableEventDashboard />} />
+            <Route path="/jobT" element={<TableFindJobDashboard />} />
+            <Route path="/home" element={<LoginForm />} />
+ <Route path="/test5" element={<DashboardTabs />} />
+            <Route
+              path="*"
+              element={
+                <p
+                  style={{
+                    width: "100%",
+                    minHeight: "89.5vh",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
+                  404 NOT FOUND
+                </p>
+              }
+            />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/company" element={<JobPage />} />
 
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/findjob" element={<JobList />} />
-          <Route path="/dashboard" element={<Header />} />
-          <Route path="/login" element={<LoginForm />} />
-        </Routes>
-      </Router>
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/findjob" element={<JobList />} />
+            <Route path="/dashboard" element={<Header />} />
+            <Route path="/login" element={<LoginForm />} />
+          </Routes>
+      </AuthProvider>
+        </Router>
     </div>
   );
 }

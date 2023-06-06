@@ -3,17 +3,15 @@ import axios from "axios";
 import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
-import Rating from "@mui/material/Rating";
-import "./TableResourceDashboard.css";
 import React from "react";
 
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import Edit from "./edit/edit";
-import Add from "./add/Add";
+import Edit from "./edit/editJob";
+import Add from "./add/AddJob";
 
-const TableResourceDashboard = () => {
-  const [resources, setResources] = useState([]);
+const TableJobDashboard = () => {
+  const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [edit, setEdit] = useState(false);
   const [editId, setEditId] = useState("");
@@ -21,10 +19,8 @@ const TableResourceDashboard = () => {
   const getData = async () => {
     try {
       setLoading(true);
-      let res = await axios.get(
-        `${process.env.REACT_APP_URL}/resource`
-        );
-      setResources(res.data.message);
+      let res = await axios.get(`${process.env.REACT_APP_URL}/job`);
+      setJobs(res.data.message);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -43,7 +39,7 @@ const TableResourceDashboard = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`${process.env.REACT_APP_URL}/resource/delete/${id}`)
+          .delete(`${process.env.REACT_APP_URL}/job/delete/${id}`)
           .then((response) => {
             console.log(response);
             getData();
@@ -65,37 +61,30 @@ const TableResourceDashboard = () => {
     {
       field: "title",
       headerName: "Title",
-      width: 150,
     },
     {
-      field: "category",
-      headerName: "Category",
-      width: 150,
+      field: "description",
+      headerName: "Description",
     },
     {
-      field: "link",
-      headerName: "Link",
-      width: 150,
+      field: "location",
+      headerName: "Location",
     },
-
     {
-      field: "rating",
-      headerName: "Rating",
-      width: 150,
-      renderCell: (params) => {
-        return (
-          <>
-            <Box component="fieldset" borderColor="transparent">
-              <Rating
-                name="read-only"
-                value={params.row.rating}
-                readOnly
-                sx={{ width: "90%" }}
-              />{" "}
-            </Box>
-          </>
-        );
-      },
+      field: "salary",
+      headerName: "Salary",
+    },
+    {
+      field: "type",
+      headerName: "Type",
+    },
+    {
+      field: "company",
+      headerName: "Company",
+    },
+    {
+      field: "urldemo",
+      headerName: "urldemo",
     },
     {
       field: "actions",
@@ -141,14 +130,15 @@ const TableResourceDashboard = () => {
           flexDirection: "column",
           gap: "1rem",
         }}
+        // Center the table horizontally
       >
         <button style={{ width: "25%" }} onClick={handleShowAdd}>
-          Add Resource
+          Add Job
         </button>
         <DataGrid
-          rowHeight={60}
+          rowHeight={80}
           checkboxSelection={false}
-          rows={resources}
+          rows={jobs}
           disableSelectionOnClick
           columns={columns}
           getRowId={(row) => row._id}
@@ -161,7 +151,7 @@ const TableResourceDashboard = () => {
             pagination: {
               paginationModel: {
                 pageSize: 10,
-                page: 5
+                page: 5,
               },
             },
           }}
@@ -188,4 +178,4 @@ const TableResourceDashboard = () => {
   );
 };
 
-export default TableResourceDashboard;
+export default TableJobDashboard;

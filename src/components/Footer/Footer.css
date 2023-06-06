@@ -99,6 +99,11 @@ nav ul li a {
 
 .social-icons a i {
   font-size: 18px;
+  
+
+}
+.social-icons{
+  margin-top: 10px;
 }
 
 /* Media queries */
