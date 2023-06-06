@@ -3,7 +3,7 @@
     margin: 0 auto;
     padding: 2rem;
     background-color: whitesmoke;
-    width: 80%;
+    /* width: 80%; */
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
   .bgblog{
@@ -137,9 +137,17 @@
     .blog-page__search-input {
       padding: 1rem;
       font-size: 1rem;
-      width: 88%;
+      width: 100%;
       border: 2px solid #007bff;
       border-radius: 4px;
       transition: border-color 0.3s ease-in-out;
     }
+    /* .blog-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: whitesmoke;
+      width: 80%;
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    } */
   }
